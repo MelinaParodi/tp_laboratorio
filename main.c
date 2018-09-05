@@ -1,3 +1,12 @@
+/*******************************************************************
+*Programa:TP_LABORATORIO_1
+*
+*Objetivo: Ingresar dos valores, realizar las operaciones y mostrarlas
+nombre[Melina Parodi]
+edad 27
+*
+*
+********************************************************************/
 
 #include <stdio.h>
 #include <stdlib.h>
