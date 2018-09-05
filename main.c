@@ -1,3 +1,4 @@
+
 #include <stdio.h>
 #include <stdlib.h>
 #include "calculadora.h"
@@ -11,20 +12,20 @@ void printResults(int resultAddition, int resultSubstraction, float resultDivisi
 
 int main(void)
 {
-    int x=0; // se declara la variable x
-    int y=0; // se declara la variable y
-    int resultAddition=0; // guarda el resultado de la suma
-    int resultSubstraction=0; // guarda el resultado de la resta
-    float resultDivision=0; // guarda el resultado de la division
-    int resultMultiplication=0; // guarda el resultado de la multipliacion
+    int x=0; // Se declara la variable x
+    int y=0; // Se declara la variable y
+    int resultAddition=0; // Guarda el resultado de la suma
+    int resultSubstraction=0; // Guarda el resultado de la resta
+    float resultDivision=0; // guarda el resultado de la división
+    int resultMultiplication=0; // guarda el resultado de la multipliación
     int resultFactorialA=0; // guarda el resultado de factorial A
     int resultFactorialB=0;// guarda el resultado de factorial B
     int flagEnd=0; // guarda para 0 = seguir, 1=salir
-    int flagDivisionZero=1;// representa con un 0
+    int flagDivisionZero=1;// va a guardar un 0 siempre que se pueda realizar la división, es decir, que variable "y" sea distinta a 0. Si no en banderaDivisionCero tiene que haber un 1.
     do
     {
 
-        int option; //Variable que representa opcion que eligio el usuario
+        int option; //Variable que representa la opción que eligió el usuario
 
 
         printMenu(x, y);
@@ -78,9 +79,14 @@ int main(void)
 
     return 0;
 }
+/** \brief La funcion imprimir menu, imprime las 5 opciones a elegir y muestra los dos numeros ingresados por el usario
+ * \param x es el valor que recibe la funcion (primer operando que ingresa el usuario)
+ * \param y es el valor que recibe la funcion  (segundo operando que ingresa el usuario)
+ * \return no retorna nada
+ */
 
 
-void printMenu(int x, int y) //por valor
+void printMenu(int x, int y)
 {
     printf("1. Ingresar 1er operando (A=%d)\n", x);
     printf("2. Ingresar 2do operando (B=%d)\n", y);
@@ -89,8 +95,12 @@ void printMenu(int x, int y) //por valor
     printf("5. Salir\n\n");
 }
 
+/** \brief La función readNumber muestra al usuario "ingrese un numero"
+ * \param recibe por parámetro la dirección donde se guarda un número entero
+ * \return no retorna nada
+ */
 
-void readNumber(int* pnumber) // por referencia
+void readNumber(int* pnumber)
 {
 
     printf("Ingrese el valor del operando: ");
@@ -98,7 +108,12 @@ void readNumber(int* pnumber) // por referencia
     scanf("%d",pnumber);
 }
 
-void printResults(int resultAddition, int resultSubstraction, float resultDivision, int resultMultiplication, int resultFactorialA, int resultFactorialB, int flagDivisionZero )
+/** \brief imprime los resultados de las operaciones
+ * \param recibe por parametro los valores de las operaciones calculadas
+ * \return no retorna nada
+ */
+
+void printResults(int resultAddition, int resultSubstraction, float resultDivision, int resultMultiplication, int resultFactorialA, int resultFactorialB, int flagDivisionZero )// paso por valor los resultados de las operaciones
 {
     printf("a. El resultado de A+B es: %d\n", resultAddition);
     printf("b. El resultado de A-B es: %d\n", resultSubstraction);
