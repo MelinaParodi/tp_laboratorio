@@ -82,6 +82,9 @@ int main(void)
 
         case 5:
             flagEnd = 1;
+            break;
+        default:
+            printf("Opcion incorrecta\n\n");
         }
     }
     while(flagEnd==0);
